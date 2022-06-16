@@ -22,6 +22,13 @@ namespace GameStop.BL
         {
             ListadeProductos = _contexto.Productos.ToList();
             return _contexto.Productos.ToList();
+
+        }
+
+        public void GuardarProducto(Producto producto)
+        {
+            _contexto.Productos.Add(producto);
+            _contexto.SaveChanges();
         }
     }
 }
